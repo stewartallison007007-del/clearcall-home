@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/blog",
+      "destination": "https://wp.clearcall.agency/blog"
+    },
+    {
       "source": "/blog/:path*",
       "destination": "https://wp.clearcall.agency/blog/:path*"
     },
