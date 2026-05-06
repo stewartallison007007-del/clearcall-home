@@ -19,10 +19,6 @@
     {
       "source": "/wp-login.php",
       "destination": "https://wp.clearcall.agency/wp-login.php"
-    },
-    {
-      "source": "/((?!$|index|favicon.ico|.*\\.js|.*\\.css).*)",
-      "destination": "https://wp.clearcall.agency/$1"
     }
   ]
 }
