@@ -1,14 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/blog",
-      "destination": "https://wp.clearcall.agency/blog"
-    },
-    {
-      "source": "/blog/:path*",
-      "destination": "https://wp.clearcall.agency/blog/:path*"
-    },
-    {
       "source": "/wp-admin/:path*",
       "destination": "https://wp.clearcall.agency/wp-admin/:path*"
     },
@@ -23,6 +15,10 @@
     {
       "source": "/wp-login.php",
       "destination": "https://wp.clearcall.agency/wp-login.php"
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://wp.clearcall.agency/:path*"
     }
   ]
 }
