@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ClearCall Agency — AI Efficiency for UK Business</title>
+<meta name="description" content="AI that works in your business, not just in a demo. Free 30-minute assessment. We find your biggest opportunities or it costs nothing. Call 0330 533 0665." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #08121F;
+    --navy-mid: #0C1B2E;
+    --navy-card: #0F2038;
+    --teal: #00D4AA;
+    --teal-dark: #00A887;
+    --white: #FFFFFF;
+    --off: #F2F5F9;
+    --border: rgba(0, 212, 170, 0.18);
+    --text-dim: rgba(255, 255, 255, 0.62);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--teal); color: var(--navy); }
+
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+  h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .eyebrow {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--teal);
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 22px 0;
+    transition: all 0.35s ease;
+    background: transparent;
+  }
+  .nav.scrolled {
+    background: rgba(8, 18, 31, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-mark {
+    width: 10px; height: 10px;
+    background: var(--teal);
+    border-radius: 2px;
+    box-shadow: 0 0 12px var(--teal);
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.78);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .nav-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.78);
+    transition: color 0.2s;
+  }
+  .nav-phone:hover { color: var(--white); }
+  .nav-phone svg { width: 14px; height: 14px; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--teal);
+    color: var(--navy);
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.25);
+    animation: glowPulse 3.5s ease-in-out infinite;
+  }
+  .btn-primary:hover {
+    background: var(--teal);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 212, 170, 0.45);
+  }
+  @keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 170, 0.25); }
+    50% { box-shadow: 0 0 40px rgba(0, 212, 170, 0.45); }
+  }
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.18);
+    color: var(--white);
+    background: transparent;
+  }
+  .btn-ghost:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+  .btn-arrow { transition: transform 0.2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  .nav-cta {
+    padding: 11px 18px;
+    font-size: 13px;
+  }
+
+  .nav-burger {
+    display: none;
+    width: 32px; height: 32px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+  }
+  .nav-burger span {
+    display: block;
+    width: 22px; height: 1.5px;
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--navy);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  .mobile-overlay.open { transform: translateY(0); }
+  .mobile-overlay a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .mobile-overlay a:hover { color: var(--teal); }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 140px 0 80px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  #particle-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(0, 212, 170, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-eyebrow,
+  .hero h1,
+  .hero-sub,
+  .hero-ctas,
+  .hero-trust {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.2s; }
+  .hero-sub { animation-delay: 0.3s; }
+  .hero-ctas { animation-delay: 0.4s; }
+  .hero-trust { animation-delay: 0.5s; }
+  .abby-card-wrap { animation: fadeUp 1s ease 0.6s forwards, float 7s ease-in-out 1.6s infinite; opacity: 0; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 6.4vw, 92px);
+    margin: 24px 0 28px;
+  }
+  .hero h1 .accent { color: var(--teal); }
+  .hero-sub {
+    font-size: 19px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.72);
+    max-width: 560px;
+    margin-bottom: 36px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+  .hero-trust {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .trust-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.05em;
+  }
+  .trust-pill::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 8px var(--teal);
+  }
+
+  /* Abby card */
+  .abby-card {
+    background: rgba(15, 32, 56, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .abby-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 100% 0%, rgba(0, 212, 170, 0.12), transparent 60%);
+    pointer-events: none;
+  }
+  .abby-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+  .abby-id {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .abby-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: var(--navy);
+    font-size: 16px;
+  }
+  .abby-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .abby-role {
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--teal);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .live-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    position: relative;
+  }
+  .live-dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0.4;
+    animation: pulseDot 1.6s ease-out infinite;
+  }
+  @keyframes pulseDot {
+    0% { transform: scale(0.6); opacity: 0.5; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+  .convo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 200px;
+    margin-bottom: 22px;
+  }
+  .bubble {
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 14px;
+    max-width: 85%;
+    line-height: 1.5;
+  }
+  .bubble.them {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+  }
+  .bubble.us {
+    background: var(--teal);
+    color: var(--navy);
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    font-weight: 500;
+  }
+  .typing-cursor {
+    display: inline-block;
+    width: 7px; height: 14px;
+    background: currentColor;
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 0.9s steps(2) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  .abby-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .abby-num {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+  }
+  .abby-call-btn {
+    background: var(--teal);
+    color: var(--navy);
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+  .abby-call-btn:hover { transform: translateY(-1px); }
+
+  /* ===== POWERED BY ===== */
+  .powered-by {
+    background: var(--navy);
+    padding: 60px 0;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .powered-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    gap: 40px;
+  }
+  .powered-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .marquee {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  }
+  .marquee-track {
+    display: flex;
+    gap: 64px;
+    animation: marquee 28s linear infinite;
+    width: max-content;
+  }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  @keyframes marquee {
+    to { transform: translateX(-50%); }
+  }
+  .marquee-item {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: rgba(255,255,255,0.4);
+    white-space: nowrap;
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .marquee-item:hover { color: rgba(255,255,255,0.85); }
+  .marquee-item .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+  }
+
+  /* ===== NARRATIVE ===== */
+  .narrative {
+    background: var(--navy-mid);
+    padding: 160px 0;
+  }
+  .narrative-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .narrative .eyebrow { margin-bottom: 60px; display: flex; }
+  .narrative-line {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 3.4vw, 44px);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    color: rgba(255, 255, 255, 0.55);
+    transition: color 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), text-shadow 0.6s ease, letter-spacing 0.6s ease;
+    transform: translateZ(0);
+  }
+  .narrative-line.pop.lit {
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-4px) scale(1.02);
+    text-shadow: 0 0 24px rgba(0, 212, 170, 0.35);
+    letter-spacing: -0.022em;
+  }
+  .narrative-line.pop.lit.teal {
+    color: var(--teal);
+    text-shadow: 0 0 28px rgba(0, 212, 170, 0.55);
+  }
+  .narrative-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 60px 0;
+  }
+  .narrative-final {
+    font-size: 19px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.6;
+  }
+  .narrative-bullets {
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 28px;
+  }
+  .narrative-bullets li {
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .narrative-bullets li::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--teal);
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px var(--teal);
+  }
+  @media (max-width: 600px) {
+    .narrative-bullets { grid-template-columns: 1fr; }
+  }
+
+  /* ===== HOW IT WORKS ===== */
+  .how {
+    background: var(--off);
+    color: var(--navy);
+    padding: 140px 0;
+  }
+  .how .eyebrow { color: var(--teal-dark); }
+  .how .eyebrow::before { background: var(--teal-dark); }
+  .section-head {
+    max-width: 720px;
+    margin-bottom: 80px;
+  }
+  .section-head h2 {
+    font-size: clamp(38px, 4.6vw, 60px);
+    margin: 20px 0 20px;
+  }
+  .section-head .sub {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(8, 18, 31, 0.65);
+  }
+  .how-section .section-head .sub { color: rgba(8, 18, 31, 0.7); }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    position: relative;
+  }
+  .step {
+    position: relative;
+  }
+  .step-num {
+    width: 76px; height: 76px;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 2px solid var(--teal);
+    color: var(--teal);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 24px rgba(8,18,31,0.12);
+  }
+  .step:not(:last-child) .step-num::after { display: none; }
+  .step-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .step-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .step-body {
+    font-size: 15px;
+    color: rgba(8,18,31,0.7);
+    margin-bottom: 22px;
+    line-height: 1.6;
+  }
+  .step-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: flex-end;
+  }
+  .step {
+    display: flex;
+    flex-direction: column;
+  }
+  .step-bullets li {
+    font-size: 14px;
+    color: rgba(8,18,31,0.78);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .step-bullets li::before {
+    content: '';
+    width: 14px; height: 14px;
+    background: var(--teal);
+    flex-shrink: 0;
+    margin-top: 4px;
+    border-radius: 3px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2.5 6.5l2.5 2.5 5-5.5' stroke='%23072A23' stroke-width='1.6' fill='none' stroke-linecap='round'/></svg>");
+    background-size: 11px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .how-cta-row {
+    margin-top: 80px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .how-cta-row .btn-ghost { border-color: rgba(8,18,31,0.18); color: var(--navy); }
+  .how-cta-row .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+
+  /* ===== SERVICES ===== */
+  .services {
+    background: var(--navy);
+    padding: 140px 0;
+  }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    background: rgba(15, 32, 56, 0.8);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    position: relative;
+    transition: transform 0.4s ease, border-color 0.3s ease;
+    overflow: hidden;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 212, 170, 0.4);
+  }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-card.featured {
+    background: linear-gradient(180deg, rgba(0, 212, 170, 0.12), rgba(15, 32, 56, 0.85));
+    border-color: rgba(0, 212, 170, 0.4);
+  }
+  .service-badge {
+    position: absolute;
+    top: 24px; right: 24px;
+    background: var(--teal);
+    color: var(--navy);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .service-icon {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    background: rgba(0,212,170,0.12);
+    border: 1px solid rgba(0,212,170,0.24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: var(--teal);
+  }
+  .service-icon svg { width: 24px; height: 24px; }
+  .service-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .service-desc {
+    font-size: 15px;
+    color: var(--text-dim);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  .service-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .service-features li {
+    font-size: 14px;
+    color: rgba(255,255,255,0.78);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .service-features li::before {
+    content: '';
+    width: 5px; height: 5px;
+    background: var(--teal);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .service-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .service-price {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--white);
+  }
+  .service-price small {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .service-link {
+    color: var(--teal);
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+  .service-link:hover { gap: 10px; }
+
+  /* ===== CALL ABBY ===== */
+  .call-abby {
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(0,212,170,0.18), transparent 60%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
+    padding: 140px 0;
+  }
+  .call-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .call-grid h2 {
+    font-size: clamp(38px, 4.4vw, 56px);
+    margin: 24px 0 24px;
+  }
+  .call-grid .sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--text-dim);
+    margin-bottom: 32px;
+    max-width: 480px;
+  }
+  .pulse-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    background: rgba(0,212,170,0.1);
+    border: 1px solid rgba(0,212,170,0.3);
+    border-radius: 100px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+  .pulse-ring {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 0 0 var(--teal);
+    animation: pulseRing 1.8s infinite;
+  }
+  @keyframes pulseRing {
+    0% { box-shadow: 0 0 0 0 rgba(0,212,170,0.6); }
+    70% { box-shadow: 0 0 0 14px rgba(0,212,170,0); }
+    100% { box-shadow: 0 0 0 0 rgba(0,212,170,0); }
+  }
+  .number-card {
+    background: rgba(15, 32, 56, 0.85);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .number-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(0,212,170,0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .number-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .big-number {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(36px, 4.6vw, 54px);
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  .number-desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .big-call-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--teal);
+    color: var(--navy);
+    padding: 18px 32px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.25s;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0,212,170,0.3);
+  }
+  .big-call-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0,212,170,0.5);
+  }
+  .free-tag {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--teal);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  /* ===== STATS ===== */
+  .stats {
+    background: var(--navy-mid);
+    padding: 100px 0;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .stat {
+    padding: 16px 32px;
+    text-align: left;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(40px, 5vw, 64px);
+    color: var(--teal);
+    margin-bottom: 8px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  /* ===== WHY CLEARCALL ===== */
+  .why {
+    background: var(--off);
+    color: var(--navy);
+    padding: 140px 0;
+  }
+  .why .eyebrow { color: var(--teal-dark); }
+  .why .eyebrow::before { background: var(--teal-dark); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .why-left h2 {
+    font-size: clamp(38px, 4.4vw, 56px);
+    margin: 20px 0 20px;
+  }
+  .why-left .sub {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(8,18,31,0.7);
+    margin-bottom: 48px;
+  }
+  .differentiators {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .diff {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .diff-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--navy);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .diff-icon svg { width: 20px; height: 20px; }
+  .diff h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+  .diff p {
+    font-size: 14px;
+    color: rgba(8,18,31,0.65);
+    line-height: 1.55;
+  }
+  .why-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .why-card {
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .why-card.dark {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .why-card.teal-tint {
+    background: rgba(0, 212, 170, 0.08);
+    border: 1px solid rgba(0, 212, 170, 0.25);
+  }
+  .why-card.yorks {
+    background: var(--white);
+    border: 1px solid rgba(8,18,31,0.08);
+  }
+  .why-card h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .why-card p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .why-card.dark p { color: rgba(255,255,255,0.7); }
+  .why-card.teal-tint p { color: rgba(8,18,31,0.75); }
+  .why-card.yorks p { color: rgba(8,18,31,0.65); }
+  .compliance-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .badge {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.78);
+  }
+  .yorks-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: var(--teal-dark);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .yorks-mark::before {
+    content: '';
+    display: inline-block;
+    width: 14px; height: 14px;
+    background: var(--teal-dark);
+    border-radius: 2px;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2C8 2 5 5 5 9c0 5.5 7 13 7 13s7-7.5 7-13c0-4-3-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z' fill='black'/></svg>") center/contain no-repeat;
+            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2C8 2 5 5 5 9c0 5.5 7 13 7 13s7-7.5 7-13c0-4-3-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z' fill='black'/></svg>") center/contain no-repeat;
+  }
+
+  /* ===== FAQ ===== */
+  .faq { background: var(--navy-mid); padding: 140px 0; border-top: 1px solid rgba(255,255,255,0.04); }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start; }
+  .faq-head { position: sticky; top: 100px; }
+  .faq-head h2 { font-size: clamp(38px, 4.4vw, 56px); margin: 20px 0 20px; }
+  .faq-head .sub { font-size: 17px; font-weight: 300; color: var(--text-dim); }
+  .faq-list { display: flex; flex-direction: column; gap: 14px; }
+  .faq-item { background: rgba(15, 32, 56, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; overflow: hidden; transition: border-color 0.3s, background 0.3s; }
+  .faq-item[open] { border-color: var(--border); background: rgba(15, 32, 56, 0.95); }
+  .faq-item summary { list-style: none; cursor: pointer; padding: 22px 26px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 17px; color: var(--white); transition: color 0.2s; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: var(--teal); }
+  .faq-icon { position: relative; width: 18px; height: 18px; flex-shrink: 0; }
+  .faq-icon::before, .faq-icon::after { content: ''; position: absolute; left: 50%; top: 50%; background: var(--teal); transition: transform 0.3s ease; }
+  .faq-icon::before { width: 14px; height: 2px; transform: translate(-50%, -50%); }
+  .faq-icon::after { width: 2px; height: 14px; transform: translate(-50%, -50%); }
+  .faq-item[open] .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+  .faq-body { padding: 0 26px 26px; font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.72); animation: faqOpen 0.4s ease; }
+  @keyframes faqOpen { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 960px) {
+    .faq { padding: 100px 0; }
+    .faq-grid { grid-template-columns: 1fr; gap: 40px; }
+    .faq-head { position: static; }
+  }
+
+  /* ===== PRE-FOOTER CTA ===== */
+  .pre-footer {
+    position: relative;
+    background: var(--navy);
+    padding: 140px 0;
+    text-align: center;
+    overflow: hidden;
+    border-top: 1px solid var(--teal);
+  }
+  .pre-footer::before {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(ellipse at center bottom, rgba(0,212,170,0.22), transparent 60%);
+    pointer-events: none;
+  }
+  .pre-footer-inner {
+    position: relative;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .pre-footer h2 {
+    font-size: clamp(40px, 5.4vw, 76px);
+    margin: 24px 0 24px;
+  }
+  .pre-footer .sub {
+    font-size: 19px;
+    font-weight: 300;
+    color: var(--text-dim);
+    margin-bottom: 40px;
+  }
+  .pre-footer-ctas {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .pre-footer-micro {
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+  .pre-footer-micro span { margin: 0 12px; color: var(--teal); }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--navy);
+    padding: 80px 0 40px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 56px;
+  }
+  .footer-brand p {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-top: 18px;
+    max-width: 280px;
+    line-height: 1.6;
+  }
+  .footer-col h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer-col a {
+    font-size: 14px;
+    color: var(--text-dim);
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--teal); }
+  .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .footer-contact-item svg { width: 14px; height: 14px; flex-shrink: 0; color: var(--teal); }
+  .footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .footer-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .footer-badges .badge { font-size: 10px; }
+  .copyright {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ===== REVEAL ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .nav-phone { display: none; }
+    .nav-burger { display: flex; }
+    .nav-cta { display: none; }
+    .hero { padding: 120px 0 60px; min-height: auto; }
+    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+    .powered-grid { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+    .narrative { padding: 100px 0; }
+    .how, .services, .call-abby, .why, .pre-footer { padding: 100px 0; }
+    .steps { grid-template-columns: 1fr; gap: 56px; }
+    .step:not(:last-child) .step-num::after { display: none; }
+    .service-grid { grid-template-columns: 1fr; }
+    .call-grid { grid-template-columns: 1fr; gap: 56px; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 24px; }
+    .stat:nth-child(2n) { border-right: none; }
+    .stat:nth-last-child(-n+2) { border-bottom: none; }
+    .why-grid { grid-template-columns: 1fr; gap: 48px; }
+    .differentiators { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 0 22px; }
+    .hero-ctas .btn { flex: 1 1 100%; justify-content: center; }
+    .hero-trust { gap: 14px; }
+    .number-card { padding: 32px 22px; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .stat:last-child { border-bottom: none; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .pre-footer-micro span { display: block; margin: 6px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== NAV ============== -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark"></span>
+      ClearCall
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#abby">Take Your Assessment</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:03305330665" class="nav-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        0330 533 0665
+      </a>
+      <a href="https://docs.google.com/forms/d/147ggXa4Quk7VWUqF7nLwxcU_--vNbHi3Tn58NQ7ZNZI/viewform" target="_blank" rel="noopener" class="btn btn-primary nav-cta">
+        Take Your Free Assessment
+        <span class="btn-arrow">→</span>
+      </a>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobile-overlay">
+  <a href="#services" class="m-link">Services</a>
+  <a href="#how" class="m-link">How It Works</a>
+  <a href="#abby" class="m-link">Call Abby</a>
+  <a href="#why" class="m-link">Why Us</a>
+  <a href="#faq" class="m-link">FAQ</a>
+  <a href="#faq" class="m-link">FAQ</a>
+  <a href="tel:03305330665" class="m-link" style="color: var(--teal);">0330 533 0665</a>
+  <a href="https://docs.google.com/forms/d/147ggXa4Quk7VWUqF7nLwxcU_--vNbHi3Tn58NQ7ZNZI/viewform" target="_blank" rel="noopener" class="btn btn-primary">Take Your Free Assessment</a>
+</div>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <canvas id="particle-canvas"></canvas>
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <div class="hero-eyebrow eyebrow">UK's Premier AI Agency</div>
+      <h1 style="font-size: 80px">
+        AI that runs your business
+        <span class="accent">while you run the show.</span>
+      </h1>
+      <p class="hero-sub">We install AI Operating Systems into ambitious UK businesses. Voice agents, workflow automation, lead handling, admin elimination. Bespoke to your business, live in days, working while you sleep.</p>
+      <p style="font-size:13px; color:var(--teal); letter-spacing:0.08em; text-transform:uppercase; margin:-12px 0 28px; display:inline-flex; align-items:center; gap:10px; font-weight:500;"><span class="live-dot" style="width:8px;height:8px;"></span>Meet Abby — our own AI assessor, live on 0330 533 0665</p>
+      <div class="hero-ctas">
+        <a href="https://docs.google.com/forms/d/147ggXa4Quk7VWUqF7nLwxcU_--vNbHi3Tn58NQ7ZNZI/viewform" target="_blank" rel="noopener" class="btn btn-primary">
+          Take Your Free Assessment
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="tel:03305330665" class="btn btn-ghost">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          0330 533 0665
+        </a>
+      </div>
+      <div class="hero-trust">
+        <span class="trust-pill">GDPR Compliant</span>
+        <span class="trust-pill">Bespoke Build</span>
+        <span class="trust-pill">Built for UK Business</span>
+      </div>
+    </div>
+    <div class="abby-card-wrap">
+      <div class="abby-card">
+        <div class="abby-head">
+          <div class="abby-id">
+            <div class="abby-avatar">A</div>
+            <div>
+              <div class="abby-name">Abby</div>
+              <div class="abby-role">Live AI Assessor · Built by ClearCall</div>
+            </div>
+          </div>
+          <div class="live-badge">
+            <span class="live-dot"></span>
+            Live
+          </div>
+        </div>
+        <div class="convo" id="convo"></div>
+        <div class="abby-footer">
+          <div>
+            <div style="font-size:11px;color:var(--text-dim);margin-bottom:2px;letter-spacing:0.08em;text-transform:uppercase;">Speak to Abby</div>
+            <div class="abby-num">0330 533 0665</div>
+          </div>
+          <a href="tel:03305330665" class="abby-call-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== POWERED BY ============== -->
+<section class="powered-by">
+  <div class="container powered-grid">
+    <div class="powered-label">Powered by</div>
+    <div class="marquee">
+      <div class="marquee-track" id="marquee-track">
+        <span class="marquee-item">Retell AI<span class="dot"></span></span>
+        <span class="marquee-item">n8n<span class="dot"></span></span>
+        <span class="marquee-item">Cal.com<span class="dot"></span></span>
+        <span class="marquee-item">Claude (Anthropic)<span class="dot"></span></span>
+        <span class="marquee-item">Hostinger<span class="dot"></span></span>
+        <span class="marquee-item">DUAA 2025 Verified<span class="dot"></span></span>
+        <span class="marquee-item">Ofcom Compliant<span class="dot"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== NARRATIVE ============== -->
+<section class="narrative">
+  <div class="container narrative-inner">
+    <div class="eyebrow">The Real Cost</div>
+    <p class="narrative-line pop">You are good at what you do.</p>
+    <p class="narrative-line pop">The work is steady. The team is solid. The phone keeps ringing.</p>
+    <p class="narrative-line pop">But the phone rings while you're on the job, and half of those calls go to voicemail.</p>
+    <p class="narrative-line pop">A quote went out on Tuesday. It's Friday. Nobody's chased it.</p>
+    <p class="narrative-line pop">An hour gone on admin that should have taken five minutes.</p>
+    <p class="narrative-line pop">The business is running you, when it should be the other way round.</p>
+    <p class="narrative-line pop">There is a better way. It's available now, and it works.</p>
+    <p class="narrative-line teal pop">That is exactly what ClearCall was built to fix.</p>
+    <div class="narrative-divider"></div>
+    <p class="narrative-final">We install AI systems that:</p>
+    <ul class="narrative-bullets">
+      <li>Answer your calls</li>
+      <li>Qualify your leads</li>
+      <li>Run your follow-ups</li>
+      <li>Clear your admin</li>
+    </ul>
+    <p class="narrative-final" style="margin-top:18px;">Bespoke to how your business actually works.</p>
+    <p class="narrative-final">Live in days.</p>
+  </div>
+</section>
+
+<!-- ============== HOW IT WORKS ============== -->
+<section class="how how-section" id="how">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">The Process</div>
+      <h2>Three steps.<br>No&nbsp;surprises.</h2>
+      <p class="sub">From first call to live system in under a fortnight. Bespoke systems, built especially for you. Nothing generic, nothing off-the-shelf.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-tag">Step One</div>
+        <h3 class="step-title">Free AI Efficiency Assessment</h3>
+        <p class="step-body">A 30-minute call with Abby or our team. We map where your hours and money are going.</p>
+        <ul class="step-bullets">
+          <li>Call audit and lead-handling review</li>
+          <li>Admin and follow-up bottleneck spot</li>
+          <li>Quick wins identified in seconds and sent to you</li>
+        </ul>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-tag">Step Two</div>
+        <h3 class="step-title">We Build It For You</h3>
+        <p class="step-body">Bespoke AI built around your workflow, not a template. We handle the engineering, integration and testing.</p>
+        <ul class="step-bullets">
+          <li>Bespoke voice agent trained on your business</li>
+          <li>Connected to your CRM, calendar and inbox</li>
+          <li>Tested live before it goes anywhere near a customer</li>
+        </ul>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-tag">Step Three</div>
+        <h3 class="step-title">You Get Your Time Back</h3>
+        <p class="step-body">Your AI runs in the background, 24/7. You own it. You see every call, lead and outcome.</p>
+        <ul class="step-bullets">
+          <li>Live in 3–5 working days</li>
+          <li>Full dashboard, full transparency</li>
+          <li>AI Partnership keeps you ahead of the field</li>
+        </ul>
+      </div>
+    </div>
+    <div class="how-cta-row reveal">
+      <a href="https://docs.google.com/forms/d/147ggXa4Quk7VWUqF7nLwxcU_--vNbHi3Tn58NQ7ZNZI/viewform" target="_blank" rel="noopener" class="btn btn-primary">
+        Take Your Free Assessment
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="tel:03305330665" class="btn btn-ghost">Call our AI Support now — 0330 533 0665</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICES ============== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">What We Do</div>
+      <h2 style="color:var(--white);">Four ways we put AI to work in your business.</h2>
+      <p class="sub" style="color:var(--text-dim);">Every engagement starts with the free assessment. From there, you choose what you want building — and you own it for life.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card featured reveal">
+        <div class="service-badge">Start Here</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3 class="service-title">Free AI Efficiency Assessment</h3>
+        <p class="service-desc">A 30-minute call where we find where your business is leaking time and money. Five or more ROI-positive opportunities — or you pay nothing.</p>
+        <ul class="service-features">
+          <li>30-minute structured discovery</li>
+          <li>Written summary of findings</li>
+          <li>Costed roadmap of recommendations</li>
+          <li>Zero pressure, zero obligation</li>
+        </ul>
+        <div class="service-foot">
+          <div class="service-price">Free</div>
+          <a href="https://docs.google.com/forms/d/147ggXa4Quk7VWUqF7nLwxcU_--vNbHi3Tn58NQ7ZNZI/viewform" target="_blank" rel="noopener" class="service-link">Book now <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <h3 class="service-title">AI Receptionist</h3>
+        <p class="service-desc">A voice agent that answers every call, books jobs, qualifies leads and never takes a sick day. Trained on your business, your tone, your hours.</p>
+        <ul class="service-features">
+          <li>Answers in under two seconds, 24/7</li>
+          <li>Books straight into your calendar</li>
+          <li>From simple booking to fully bespoke concierge</li>
+          <li>Full call transcripts, recordings and human hand-off</li>
+        </ul>
+        <div class="service-foot">
+          <div class="service-price">From £199 <small>/ month</small></div>
+          <a href="#abby" class="service-link">Hear it live <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 7l8 5 8-5-8-5z"/><path d="M4 17l8 5 8-5"/><path d="M4 12l8 5 8-5"/></svg>
+        </div>
+        <h3 class="service-title">Workflow Automation</h3>
+        <p class="service-desc">The five-minute job that takes an hour — gone. We map your workflow and replace the manual bits with quiet, reliable automation.</p>
+        <ul class="service-features">
+          <li>Quote, invoice and follow-up flows</li>
+          <li>CRM, email, calendar and SMS connected</li>
+          <li>Documented and handed over to you</li>
+          <li>One agreed price, no surprises</li>
+        </ul>
+        <div class="service-foot">
+          <div class="service-price">From £295 <small>per build</small></div>
+          <a href="https://docs.google.com/forms/d/147ggXa4Quk7VWUqF7nLwxcU_--vNbHi3Tn58NQ7ZNZI/viewform" target="_blank" rel="noopener" class="service-link">Discuss scope <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+        </div>
+        <h3 class="service-title">AI Partnership</h3>
+        <p class="service-desc">A dedicated AI partner on retainer. We keep building, monitoring and improving as your business grows — like an in-house team without the overhead.</p>
+        <ul class="service-features">
+          <li>Monthly build hours and priority support</li>
+          <li>Continuous improvement and tuning</li>
+          <li>Quarterly strategy and review</li>
+          <li>First refusal on new tooling</li>
+        </ul>
+        <div class="service-foot">
+          <div class="service-price">From £395 <small>/ month</small></div>
+          <a href="https://docs.google.com/forms/d/147ggXa4Quk7VWUqF7nLwxcU_--vNbHi3Tn58NQ7ZNZI/viewform" target="_blank" rel="noopener" class="service-link">Get in touch <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CALL ABBY ============== -->
+<section class="call-abby" id="abby">
+  <div class="container call-grid">
+    <div class="reveal">
+      <div class="pulse-badge"><span class="pulse-ring"></span>Available now · 24/7</div>
+      <h2 style="font-size: 45px">Call our AI support now. 
+Free assessment. Emailed in seconds.</h2>
+      <p class="sub">Abby is our AI assessment agent. Pick up the phone, give her ten minutes, and she'll talk you through where your business is losing time and what we can do about it. No script. No sales pitch. Just a useful conversation.</p>
+      <a href="https://docs.google.com/forms/d/147ggXa4Quk7VWUqF7nLwxcU_--vNbHi3Tn58NQ7ZNZI/viewform" target="_blank" rel="noopener" class="btn btn-ghost">
+        Prefer to book a slot? <span class="btn-arrow">→</span>
+      </a>
+    </div>
+    <div class="number-card reveal">
+      <div class="number-label">Call directly</div>
+      <div class="big-number">0330 533 0665</div>
+      <div class="number-desc">Speak to Abby right now. UK landline rate. Available around the clock, every day of the year.</div>
+      <a href="tel:03305330665" class="big-call-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Start The Call
+      </a>
+      <div class="free-tag">Free · No Obligation</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== STATS ============== -->
+<section class="stats">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat reveal">
+        <div class="stat-num">2+</div>
+        <div class="stat-label">Quick win opportunities found in every assessment</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num"><span class="counter" data-target="90">0</span></div>
+        <div class="stat-label">Days to measurable return on investment</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num">3-5</div>
+        <div class="stat-label">Working days from sign-off to going live</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num">24<span style="opacity:0.4;">/</span>7</div>
+        <div class="stat-label">Always-on coverage. Your AI never sleeps.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== WHY ============== -->
+<section class="why" id="why">
+  <div class="container why-grid">
+    <div class="why-left reveal">
+      <div class="eyebrow">Why ClearCall</div>
+      <h2 style="font-size: 50px">Built for your business.
+Made yours for life.</h2>
+      <p class="sub">No black boxes. No long contracts you can't escape. No San Francisco invoices in dollars. Just AI that works in your business, on your terms.</p>
+      <div class="differentiators">
+        <div class="diff">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5 4 9 9 11 5-2 9-6 9-11V7l-9-5z"/></svg>
+          </div>
+          <div>
+            <h4>UK Compliance</h4>
+            <p>GDPR, DUAA 2025 and Ofcom-aligned. Data hosted in the UK. We do the paperwork so you don't have to.</p>
+          </div>
+        </div>
+        <div class="diff">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h4>Clear Pricing</h4>
+            <p>You see the price before you commit. No timesheets. No scope creep. No surprises on the invoice.</p>
+          </div>
+        </div>
+        <div class="diff">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+          <div>
+            <h4>Made Yours For Life</h4>
+            <p>Bespoke systems, built around your business. We keep them tuned, looked after and quietly improving — so they keep earning their keep.</p>
+          </div>
+        </div>
+        <div class="diff">
+          <div class="diff-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5.5 7 13 7 13s7-7.5 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <div>
+            <h4>Direct & Local</h4>
+            <p>You speak to the people building it. Yorkshire-based, plain-spoken, on the phone when you need us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-cards">
+      <div class="why-card dark reveal">
+        <h5>Compliance, sorted.</h5>
+        <p>Every system we deploy is reviewed against UK data protection and AI guidance before it goes live.</p>
+        <div class="compliance-row">
+          <span class="badge">GDPR</span>
+          <span class="badge">DUAA 2025</span>
+          <span class="badge">ICO Registered</span>
+          <span class="badge">Ofcom Aligned</span>
+        </div>
+      </div>
+      <div class="why-card teal-tint reveal">
+        <h5>Quick Wins, Sent In Seconds</h5>
+        <p>Your free assessment surfaces the quick wins inside your business and emails them straight to you. Bespoke to you, ROI-ranked, ready to act on — yours to keep whether we work together or not.</p>
+      </div>
+      <div class="why-card yorks reveal" style="padding: 20px">
+        <div class="yorks-mark">Yorkshire, UK</div>
+        <h5>Built up north. For the whole country.</h5>
+        <p>We're based in Yorkshire and we work with businesses across the UK. 
+- Practical people
+- Practical AI
+- Plain English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section class="faq" id="faq">
+  <div class="container faq-grid">
+    <div class="faq-head reveal">
+      <div class="eyebrow">FAQ</div>
+      <h2>The questions<br>most owners ask first.</h2>
+      <p class="sub">Straight answers. No jargon. If you've got more, Abby is on the line 24/7.</p>
+      <a href="tel:03305330665" class="btn btn-ghost" style="margin-top:24px;">Ask Abby — 0330 533 0665</a>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal"><summary>How are you different from other AI agencies?<span class="faq-icon"></span></summary><div class="faq-body"><p>Most agencies are "AI-first" — they start with a platform and find a place to shoehorn it. We are process-first. We assess your business to find the revenue leaks and bottlenecks, then engineer the AI to fix them. We're obsessive about increasing your ROI. If you're happy, we're happy.</p></div></details>
+      <details class="faq-item reveal"><summary>How do I know if we're ready?<span class="faq-icon"></span></summary><div class="faq-body"><p>If you have repetitive manual work, fragmented data, or revenue bleeding from slow response times, you're already paying the price for AI. We'll tell you exactly which processes are AI-ready and which aren't.</p></div></details>
+      <details class="faq-item reveal"><summary>What happens after you deliver?<span class="faq-icon"></span></summary><div class="faq-body"><p>We don't drop a product and run. We monitor the feedback loops and refine the model until it's a self-sustaining part of your operations. We don't leave until you're running better than before.</p></div></details>
+      <details class="faq-item reveal"><summary>How much of my team's time will this take?<span class="faq-icon"></span></summary><div class="faq-body"><p>We work on the principle of high-leverage input. We need your context, not your time. We handle the heavy lifting of development and integration so you can focus on the core business. You provide the goals; we provide the solution.</p></div></details>
+      <details class="faq-item reveal"><summary>How long until we see results?<span class="faq-icon"></span></summary><div class="faq-body"><p>Weeks, not months. Our model is to deploy a high-impact pilot immediately. We believe in the prove-then-scale approach: we show you the ROI on one specific workflow first, then scale from there.</p></div></details>
+      <details class="faq-item reveal"><summary>I don't have big data or a big tech team. Can we still do this?<span class="faq-icon"></span></summary><div class="faq-body"><p>That's the most common starting point. We design solutions that work with the data you have today, not the perfect data you wish you had. We bridge the technical gap so you don't need to hire a fleet of developers.</p></div></details>
+      <details class="faq-item reveal"><summary>We tried AI before and it failed. Why is this different?<span class="faq-icon"></span></summary><div class="faq-body"><p>Most AI projects fail because they target the wrong problem or ignore the human side. We focus on high-value, high-certainty workflows, and we stay attached to you so you actually see the results.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PRE-FOOTER ============== -->
+<section class="pre-footer">
+  <div class="container pre-footer-inner">
+    <div class="eyebrow" style="justify-content:center;display:inline-flex;">Ready when you are</div>
+    <h2>Find Out What AI Can Do For Your Business</h2>
+    <p class="sub">Thirty minutes. No commitment. Walk away with a written list of opportunities whether you work with us or not.</p>
+    <div class="pre-footer-ctas">
+      <a href="https://docs.google.com/forms/d/147ggXa4Quk7VWUqF7nLwxcU_--vNbHi3Tn58NQ7ZNZI/viewform" target="_blank" rel="noopener" class="btn btn-primary">
+        Take Your Free Assessment
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="tel:03305330665" class="btn btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call 0330 533 0665
+      </a>
+    </div>
+    <div class="pre-footer-micro">No obligation<span>·</span>No jargon<span>·</span>Results in days</div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <span class="logo-mark"></span>
+          ClearCall
+        </a>
+        <p>AI Operating Systems for ambitious UK businesses. Built in Yorkshire. Running in days.
+Practical people
+Practical AI
+Plain English</p>
+      </div>
+      <div class="footer-col">
+        <h6>Company</h6>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/save-money-with-automation/">Save Money With Automation</a></li>
+          <li><a href="/home/ai-receptionist-testing-methodology/">AI Receptionist Testing Methodology</a></li>
+          <li><a href="https://docs.google.com/forms/d/147ggXa4Quk7VWUqF7nLwxcU_--vNbHi3Tn58NQ7ZNZI/viewform" target="_blank" rel="noopener">Book Assessment</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Legal</h6>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms-of-use/">Terms of Use</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Contact</h6>
+        <ul>
+          <li><a href="tel:03305330665" class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+            0330 533 0665
+          </a></li>
+          <li><a href="mailto:stuart@clearcall.agency" class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            stuart@clearcall.agency
+          </a></li>
+          <li><span class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5.5 7 13 7 13s7-7.5 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Yorkshire, United Kingdom
+          </span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-badges">
+        <span class="badge">GDPR</span>
+        <span class="badge">DUAA 2025</span>
+        <span class="badge">ICO Registered</span>
+        <span class="badge">Ofcom Aligned</span>
+      </div>
+      <div class="copyright">© 2026 ClearCall Agency. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ============ NAV SCROLL ============ */
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ============ MOBILE MENU ============ */
+  const burger = document.getElementById('burger');
+  const overlay = document.getElementById('mobile-overlay');
+  burger.addEventListener('click', () => {
+    overlay.classList.toggle('open');
+  });
+  overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => overlay.classList.remove('open')));
+
+  /* ============ PARTICLE MESH ============ */
+  (function particles() {
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let w, h, dpr, nodes;
+    const NODE_COUNT = 70;
+    const MAX_DIST = 160;
+
+    function resize() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = canvas.clientWidth = canvas.parentElement.clientWidth;
+      h = canvas.clientHeight = canvas.parentElement.clientHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.scale(dpr, dpr);
+    }
+
+    function init() {
+      resize();
+      nodes = [];
+      for (let i = 0; i < NODE_COUNT; i++) {
+        nodes.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
+          r: Math.random() * 1.4 + 0.6
+        });
+      }
+    }
+
+    function tick() {
+      ctx.clearRect(0, 0, w, h);
+
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i];
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < 0 || n.x > w) n.vx *= -1;
+        if (n.y < 0 || n.y > h) n.vy *= -1;
+
+        for (let j = i + 1; j < nodes.length; j++) {
+          const m = nodes[j];
+          const dx = n.x - m.x;
+          const dy = n.y - m.y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < MAX_DIST) {
+            const op = (1 - d / MAX_DIST) * 0.12;
+            ctx.strokeStyle = `rgba(0, 212, 170, ${op})`;
+            ctx.lineWidth = 0.6;
+            ctx.beginPath();
+            ctx.moveTo(n.x, n.y);
+            ctx.lineTo(m.x, m.y);
+            ctx.stroke();
+          }
+        }
+
+        ctx.fillStyle = 'rgba(0, 212, 170, 0.35)';
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    init();
+    tick();
+    window.addEventListener('resize', () => {
+      resize();
+    });
+  })();
+
+  /* ============ TYPEWRITER CONVO ============ */
+  (function convo() {
+    const lines = [
+      { who: 'them', text: "Hi, this is Abby from ClearCall. How can we help you?" },
+      { who: 'us',   text: "Honestly? Phones are mad. We're missing calls." },
+      { who: 'them', text: "How many a week, would you say? And what does an average job earn you?" },
+      { who: 'us',   text: "Maybe ten missed. £400 a job on average." },
+      { who: 'them', text: "So that's roughly £4,000 a week in lost enquiries. Let's fix that." }
+    ];
+
+    const container = document.getElementById('convo');
+    let lineIdx = 0;
+
+    function typeLine(line, onDone) {
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble ' + line.who;
+      const span = document.createElement('span');
+      bubble.appendChild(span);
+      const cursor = document.createElement('span');
+      cursor.className = 'typing-cursor';
+      bubble.appendChild(cursor);
+      container.appendChild(bubble);
+
+      let i = 0;
+      const speed = 20 + Math.random() * 10;
+      const tick = () => {
+        if (i <= line.text.length) {
+          span.textContent = line.text.slice(0, i);
+          i++;
+          setTimeout(tick, speed);
+        } else {
+          cursor.remove();
+          setTimeout(onDone, 600);
+        }
+      };
+      tick();
+    }
+
+    function run() {
+      if (lineIdx >= lines.length) {
+        // Restart after pause
+        setTimeout(() => {
+          container.innerHTML = '';
+          lineIdx = 0;
+          run();
+        }, 4000);
+        return;
+      }
+      typeLine(lines[lineIdx], () => {
+        lineIdx++;
+        // Keep convo height contained
+        if (container.children.length > 4) container.removeChild(container.firstChild);
+        run();
+      });
+    }
+
+    run();
+  })();
+
+  /* ============ MARQUEE DOUBLE ============ */
+  (function marquee() {
+    const track = document.getElementById('marquee-track');
+    track.innerHTML = track.innerHTML + track.innerHTML;
+  })();
+
+  /* ============ REVEAL ON SCROLL ============ */
+  (function reveals() {
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  })();
+
+  /* ============ NARRATIVE POP (grey -> white/teal -> grey on scroll past) ============ */
+  (function narrative() {
+    const lines = document.querySelectorAll('.narrative-line');
+    if (!lines.length) return;
+
+    function update() {
+      const vh = window.innerHeight;
+      // Pop window: line is fully "lit" while its centre sits within the middle band of the viewport.
+      const popTop = vh * 0.30;     // line centre above this -> faded out (passed)
+      const popBot = vh * 0.78;     // line centre below this -> faded out (incoming)
+
+      lines.forEach(line => {
+        const rect = line.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+
+        let lit = false;
+        let dimOp = 0.55;
+
+        if (center >= popTop && center <= popBot) {
+          lit = true;
+        } else if (center < popTop) {
+          // scrolled past -> fade back to grey based on distance past popTop
+          const past = (popTop - center) / (vh * 0.25);
+          dimOp = Math.max(0.22, 0.55 - past * 0.4);
+          lit = false;
+        } else {
+          // not yet reached -> hold dim grey
+          dimOp = 0.55;
+          lit = false;
+        }
+
+        if (lit) {
+          line.classList.add('lit');
+          line.style.color = '';
+        } else {
+          line.classList.remove('lit');
+          if (line.classList.contains('teal')) {
+            line.style.color = `rgba(0, 212, 170, ${dimOp})`;
+          } else {
+            line.style.color = `rgba(255, 255, 255, ${dimOp})`;
+          }
+        }
+      });
+    }
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+  })();
+
+  /* ============ COUNTERS ============ */
+  (function counters() {
+    const els = document.querySelectorAll('.counter');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.target, 10);
+        let cur = 0;
+        const step = Math.max(1, Math.ceil(target / 30));
+        const interval = setInterval(() => {
+          cur += step;
+          if (cur >= target) { cur = target; clearInterval(interval); }
+          el.textContent = cur;
+        }, 35);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    els.forEach(el => io.observe(el));
+  })();
+
+  /* ============ SMOOTH ANCHOR OFFSET ============ */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const t = document.querySelector(id);
+        if (t) {
+          e.preventDefault();
+          const y = t.getBoundingClientRect().top + window.scrollY - 60;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
