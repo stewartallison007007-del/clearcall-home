@@ -1,9 +1,8 @@
 {
-  "version": 2,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "https://wp.clearcall.agency/$1"
+      "source": "/:path*",
+      "destination": "https://wp.clearcall.agency/:path*"
     }
   ]
 }
