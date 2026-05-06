@@ -1,24 +1,9 @@
 {
-  "rewrites": [
+  "version": 2,
+  "routes": [
     {
-      "source": "/wp-admin/:path*",
-      "destination": "https://wp.clearcall.agency/wp-admin/:path*"
-    },
-    {
-      "source": "/wp-content/:path*",
-      "destination": "https://wp.clearcall.agency/wp-content/:path*"
-    },
-    {
-      "source": "/wp-includes/:path*",
-      "destination": "https://wp.clearcall.agency/wp-includes/:path*"
-    },
-    {
-      "source": "/wp-login.php",
-      "destination": "https://wp.clearcall.agency/wp-login.php"
-    },
-    {
-      "source": "/:path*",
-      "destination": "https://wp.clearcall.agency/:path*"
+      "src": "/(.*)",
+      "dest": "https://wp.clearcall.agency/$1"
     }
   ]
 }
