@@ -21,8 +21,8 @@
       "destination": "https://wp.clearcall.agency/wp-login.php"
     },
     {
-      "source": "/page-sitemap.xml",
-      "destination": "https://wp.clearcall.agency/page-sitemap.xml"
+      "source": "/((?!$|index|favicon.ico|.*\\.js|.*\\.css).*)",
+      "destination": "https://wp.clearcall.agency/$1"
     }
   ]
 }
